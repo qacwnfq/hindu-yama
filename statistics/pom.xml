@@ -8,7 +8,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
   <groupId>com.qacwnfq.hinduyama</groupId>
-  <artifactId>histogram-maker</artifactId>
+  <artifactId>statistics</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>histogram-maker</name>
   <url>http://maven.apache.org</url>

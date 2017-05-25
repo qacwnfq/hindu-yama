@@ -1,1 +1,1 @@
-mvn archetype:generate -DarchetypeGroupId=com.qacwnfq.hinduyama -DarchetypeArtifactID=maven-archetype-quickstart -DarchetypeVersion=RELEASE
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactID=maven-archetype-quickstart -DarchetypeVersion=RELEASE
