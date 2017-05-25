@@ -1,4 +1,4 @@
-package com.qacwnfq.hinduyama;
+package com.qacwnfq.hinduyama.statistics;
 
 public class Histogram{
    public static double[]  histogram( int[] arr ){

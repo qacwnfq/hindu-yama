@@ -8,6 +8,5 @@
   <name>hinduyama</name>
   <modules>
     <module>statistics</module>
-    <!-- <module>graphics</module> future code--> 
   </modules>
 </project>

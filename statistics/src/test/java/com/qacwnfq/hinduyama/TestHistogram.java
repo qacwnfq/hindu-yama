@@ -1,4 +1,4 @@
-package com.qacwnfq.hinduyama;
+package com.qacwnfq.hinduyama.statistics;
 import junit.framework.TestCase;
 import java.util.Arrays;
 
