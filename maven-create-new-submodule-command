@@ -1,0 +1,1 @@
+mvn archetype:generate -DarchetypeGroupId=com.qacwnfq.hinduyama -DarchetypeArtifactID=generate-histogram -DarchetypeVersion=RELEASE
