@@ -7,7 +7,7 @@
   <packaging>pom</packaging>
   <name>hinduyama</name>
   <modules>
-    <module>statistics/module>
+    <module>statistics</module>
     <module>graphics</module>
   </modules>
 </project>
