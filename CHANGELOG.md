@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+- Renamed histogram-maker to statistics.
 - Added .travis.yml
 - Restructured into maven project.
 - Added histogram-maker.

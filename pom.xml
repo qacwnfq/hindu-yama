@@ -7,6 +7,7 @@
   <packaging>pom</packaging>
   <name>hinduyama</name>
   <modules>
-    <module>histogram-maker</module>
+    <module>statistics</module>
+    <!-- <module>graphics</module> future code--> 
   </modules>
 </project>
