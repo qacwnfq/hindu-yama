@@ -2,7 +2,7 @@ package statistics;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by fredrik on 5/27/17.
@@ -15,10 +15,12 @@ public class Histogram {
     Double min;
 
     Double[] data;
-    Map<String, Integer> absBins;
-    Map<String, Double> relBins;
+    TreeMap<String, Integer> absBins;
+    TreeMap<String, Double> relBins;
 
     public Histogram( Integer[] data ){
+        absBins = new TreeMap<String, Integer>();
+        relBins = new TreeMap<String, Double>();
         // basic variables needed
         this.binwidth = 1.;
         this.numEntries = data.length;
@@ -29,9 +31,9 @@ public class Histogram {
         for(int i=0; i<data.length; i++) {
             this.data[ i ] = Double.valueOf( data[ i ] );
             Integer absCount = this.absBins.containsKey( data[ i ].toString() ) ? this.absBins.get( data[ i ].toString() ) : 0;
-            Double relCount = this.relBins.containsKey( this.data[ i ].toString() ) ? this.relBins.get( this.data[ i ].toString() ) : 0;
+            Double relCount = this.relBins.containsKey( data[ i ].toString() ) ? this.relBins.get( data[ i ].toString() ) : 0;
             this.absBins.put( data[ i ].toString(), absCount+1 );
-            this.relBins.put( data[ i ].toString(), relCount + 1./ numEntries);
+            this.relBins.put( data[ i ].toString(), relCount+1./ numEntries);
         }
     }
 
@@ -55,11 +57,11 @@ public class Histogram {
         return data;
     }
 
-    public Map<String, Integer> getAbsBins() {
+    public TreeMap<String, Integer> getAbsBins() {
         return absBins;
     }
 
-    public Map<String, Double> getRelBins() {
+    public TreeMap<String, Double> getRelBins() {
         return relBins;
     }
 };
