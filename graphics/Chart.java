@@ -13,7 +13,7 @@ import org.knowm.xchart.SwingWrapper;
 // maybe add bin width?
 public class Plotter{
 
-   public static CategoryChart plot( int min, int max, double[] data ){
+   public CategoryChart plot( int min, int max, double[] data ){
       double[] range = new double[max-min+1];
       for(int i=0; i<range.length; ++i){
          range[i] = min+i;
@@ -24,7 +24,7 @@ public class Plotter{
       return histogram;
    }
 
-   public static void save( CategoryChart histogram, String file ) throws IOException {
+   public void save( CategoryChart histogram, String file ) throws IOException {
       BitmapEncoder.saveBitmap( 
             histogram,
             file,
@@ -32,7 +32,7 @@ public class Plotter{
             );
    }
 
-   public static void show( CategoryChart histogram ){
+   public void show( CategoryChart histogram ){
       new SwingWrapper( histogram ).displayChart();
    }
 }
