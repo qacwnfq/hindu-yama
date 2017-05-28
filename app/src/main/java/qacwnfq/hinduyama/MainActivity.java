@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.AxisBase;
@@ -22,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
     Integer[] data;
     Double[] bins;
     BarChart histogram;
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+    String lastInput = "None";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.histogram = (BarChart) findViewById(R.id.chart);
-        this.data = new Integer[] {2, 2, 3, 3, 4, 4, 4, 5, 12};
+        this.data = new Integer[] {};
         this.bins = new Double[11];
 
         final HashMap<Integer, String> numMapo = new HashMap<>();
@@ -50,8 +51,11 @@ public class MainActivity extends AppCompatActivity {
         }
         plot();
     }
+    public void updateLastInput(){
+        TextView textView = (TextView) findViewById(R.id.TextView2);
+        textView.setText( this.lastInput );
+    }
     public void plot(){
-        System.out.println( "PLOTTING" );
         for( int i=0; i<this.bins.length; ++i ){
             this.bins[i] = 0.;
         }
@@ -64,22 +68,144 @@ public class MainActivity extends AppCompatActivity {
         }
         BarDataSet dataset = new BarDataSet(entries, "# of occurences");
         BarData bdata = new BarData( dataset );
+        try{
+            this.histogram.clearValues();
+        }
+        catch( Exception e){
+            // do nothing if it was np
+        }
         histogram.setData(bdata);
+        updateLastInput();
     }
-    public void sendMessage( View view ) {
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        System.out.println( message );
-        Integer new_val = Integer.valueOf(message);
-        if( new_val > 1 && new_val < 13) {
-            Integer[] new_data = new Integer[this.data.length + 1];
-            for(int i=0; i<this.data.length; ++i) {
+
+    public void send2( View view ) {
+        Integer[] new_data = new Integer[this.data.length + 1];
+        for(int i=0; i<this.data.length; ++i) {
+            new_data[i] = this.data[i];
+        }
+        new_data[new_data.length-1] = 2;
+        this.data = new_data;
+        this.lastInput = "2";
+        plot();
+    }
+    public void send3( View view ) {
+        Integer[] new_data = new Integer[this.data.length + 1];
+        for(int i=0; i<this.data.length; ++i) {
+            new_data[i] = this.data[i];
+        }
+        new_data[new_data.length-1] = 3;
+        this.data = new_data;
+        this.lastInput = "3";
+        plot();
+    }
+    public void send4( View view ) {
+        Integer[] new_data = new Integer[this.data.length + 1];
+        for(int i=0; i<this.data.length; ++i) {
+            new_data[i] = this.data[i];
+        }
+        new_data[new_data.length-1] = 4;
+        this.data = new_data;
+        this.lastInput = "4";
+        plot();
+    }
+    public void send5( View view ) {
+        Integer[] new_data = new Integer[this.data.length + 1];
+        for(int i=0; i<this.data.length; ++i) {
+            new_data[i] = this.data[i];
+        }
+        new_data[new_data.length-1] = 5;
+        this.data = new_data;
+        this.lastInput = "5";
+        plot();
+    }
+    public void send6( View view ) {
+        Integer[] new_data = new Integer[this.data.length + 1];
+        for(int i=0; i<this.data.length; ++i) {
+            new_data[i] = this.data[i];
+        }
+        new_data[new_data.length-1] = 6;
+        this.data = new_data;
+        this.lastInput = "6";
+        plot();
+    }
+    public void send7( View view ) {
+        Integer[] new_data = new Integer[this.data.length + 1];
+        for(int i=0; i<this.data.length; ++i) {
+            new_data[i] = this.data[i];
+        }
+        new_data[new_data.length-1] = 7;
+        this.data = new_data;
+        this.lastInput = "7";
+        plot();
+    }
+    public void send8( View view ) {
+        Integer[] new_data = new Integer[this.data.length + 1];
+        for(int i=0; i<this.data.length; ++i) {
+            new_data[i] = this.data[i];
+        }
+        new_data[new_data.length-1] = 8;
+        this.data = new_data;
+        this.lastInput = "8";
+        plot();
+    }
+    public void send9( View view ) {
+        Integer[] new_data = new Integer[this.data.length + 1];
+        for(int i=0; i<this.data.length; ++i) {
+            new_data[i] = this.data[i];
+        }
+        new_data[new_data.length-1] = 9;
+        this.data = new_data;
+        this.lastInput = "9";
+        plot();
+    }
+    public void send10( View view ) {
+        Integer[] new_data = new Integer[this.data.length + 1];
+        for(int i=0; i<this.data.length; ++i) {
+            new_data[i] = this.data[i];
+        }
+        new_data[new_data.length-1] = 10;
+        this.data = new_data;
+        this.lastInput = "10";
+        plot();
+    }
+    public void send11( View view ) {
+        Integer[] new_data = new Integer[this.data.length + 1];
+        for(int i=0; i<this.data.length; ++i) {
+            new_data[i] = this.data[i];
+        }
+        new_data[new_data.length-1] = 11;
+        this.data = new_data;
+        this.lastInput = "11";
+        plot();
+    }
+    public void send12( View view ) {
+        Integer[] new_data = new Integer[this.data.length + 1];
+        for(int i=0; i<this.data.length; ++i) {
+            new_data[i] = this.data[i];
+        }
+        new_data[new_data.length-1] = 12;
+        this.data = new_data;
+        this.lastInput = "12";
+        plot();
+    }
+    public void clearAll( View view ){
+        this.data = new Integer[]{};
+        this.lastInput = "None";
+        plot();
+    }
+    public void clearLast( View view ){
+        if(this.data.length>1) {
+            Integer[] new_data = new Integer[this.data.length - 1];
+            for (int i = 0; i < new_data.length; i++) {
                 new_data[i] = this.data[i];
             }
-            new_data[new_data.length-1] = new_val;
             this.data = new_data;
-            this.histogram.clearValues();
+            this.lastInput = new_data[new_data.length - 1].toString();
             plot();
+        }
+        else if(this.data.length == 1 ){
+            clearAll( view );
         }
     }
 }
+
