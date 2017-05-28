@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -16,8 +17,14 @@ import com.github.mikephil.charting.data.BarEntry;
 import java.util.ArrayList;
 
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.HashMap;
+
+//TODO implement calculation to show probability of this outcome for ideal dices
+//TODO implement show of number of throws
+//TODO implement show of probability of this outcome
+//TODO maybe change color
 
 public class MainActivity extends AppCompatActivity {
     Integer[] data;
@@ -45,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
                 return numMapo.get((int)value);
             }
         });
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        YAxis rightAxis = histogram.getAxisRight();
+        rightAxis.setEnabled(false);
         ArrayList<String> labels = new ArrayList<String>();
         for (Integer i = 2; i < 13; i++) {
             labels.add(i.toString());
@@ -60,13 +70,14 @@ public class MainActivity extends AppCompatActivity {
             this.bins[i] = 0.;
         }
         for (Integer number : this.data) {
-            this.bins[number.intValue() -2 ] +=  1.;
+            this.bins[number.intValue() -2 ] +=  1./this.data.length;
         }
         ArrayList<BarEntry> entries = new ArrayList<>();
         for (Integer i = 0; i < this.bins.length; i++) {
             entries.add( new BarEntry(  i, this.bins[i].floatValue() ) );
         }
         BarDataSet dataset = new BarDataSet(entries, "# of occurences");
+        dataset.setColors(ColorTemplate.COLORFUL_COLORS);
         BarData bdata = new BarData( dataset );
         try{
             this.histogram.clearValues();
