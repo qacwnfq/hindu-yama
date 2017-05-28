@@ -22,7 +22,7 @@ public class TestHistogram {
         Integer[] data = new Integer[] {2, 3, 4, 5, 2, 2, 2, 4};
         Histogram hist;
         hist = new Histogram( data );
-        TreeMap<String, Integer> actual = hist.getAbsBins();
+        TreeMap<String, Integer> actual = hist.getAbsBinsMap();
         assertEquals( expected, actual );
     }
     @Test
@@ -35,7 +35,7 @@ public class TestHistogram {
         Integer[] data = new Integer[] {2, 3, 4, 5, 2, 2, 2, 4};
         Histogram hist;
         hist = new Histogram( data );
-        TreeMap<String, Double> actual = hist.getRelBins();
+        TreeMap<String, Double> actual = hist.getRelBinsMap();
         assertEquals( expected, actual );
      }
  }
